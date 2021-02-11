@@ -1,0 +1,69 @@
+
+const express = require('express')
+const app = express()
+  .set('json spaces', 2)
+  .use(express.json())
+  .use(require('morgan')('dev'))
+  .use(express.urlencoded({ extended: false }))
+  .use(express.static(require('path').join(__dirname, 'public')))
+  .set('port', process.env.PORT || 5555)
+  .get('/json', (req, res) => res.json({ ok: 'ok' }))
+  .all('/echo/:foo?/:bar?', (req, res) => {
+    const { method, ip, params, headers, query, body, signedCookies, cookies, session } = req
+    res.json({ method, ip, params, headers, query, body, signedCookies, cookies, session })
+  })
+
+
+
+
+const serv = require('http').createServer(app);
+serv.listen(app.get('port'),
+  () => console.log(`listen http://localhost:${JSON.stringify(serv.address().port)}`)
+);
+
+
+app.get('/', (req, res) => {
+  console.error('express connection');
+  res.sendFile(require('path').join(__dirname, 'ws.html'));
+});
+
+var WebSocketServer = require("ws").Server;
+let userId;
+var wss = new WebSocketServer({server: serv});
+    wss.on("connection", function (ws) {
+
+    console.info("websocket connection open");
+
+    var timestamp = new Date().getTime();
+    userId = timestamp;
+
+    ws.send(JSON.stringify({msgType:"onOpenConnection", msg:{connectionId:timestamp}}));
+
+
+    ws.on("message", function (data, flags) {
+        console.log("websocket received a message");
+        var clientMsg = data;
+
+        ws.send(JSON.stringify({msg:{connectionId:userId}}));
+
+
+    });
+
+    ws.on("close", function () {
+        console.log("websocket connection close");
+    });
+});
+
+const createError = require('http-errors')
+app
+  .use((req, res, next) => {
+    require('pretty-error').start()
+    return next(createError(404))
+  })
+  .use((err, req, res, next) => {
+    console.error(err.stack)
+    res.sendStatus(err.status || 500)
+  });
+
+
+module.exports = app;
