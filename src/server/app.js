@@ -21,38 +21,12 @@ serv.listen(app.get('port'),
   () => console.log(`listen http://localhost:${JSON.stringify(serv.address().port)}`)
 );
 
-
+/*
 app.get('/', (req, res) => {
   console.error('express connection');
   res.sendFile(require('path').join(__dirname, 'ws.html'));
-});
+});*/
 
-var WebSocketServer = require("ws").Server;
-let userId;
-var wss = new WebSocketServer({server: serv});
-    wss.on("connection", function (ws) {
-
-    console.info("websocket connection open");
-
-    var timestamp = new Date().getTime();
-    userId = timestamp;
-
-    ws.send(JSON.stringify({msgType:"onOpenConnection", msg:{connectionId:timestamp}}));
-
-
-    ws.on("message", function (data, flags) {
-        console.log("websocket received a message");
-        var clientMsg = data;
-
-        ws.send(JSON.stringify({msg:{connectionId:userId}}));
-
-
-    });
-
-    ws.on("close", function () {
-        console.log("websocket connection close");
-    });
-});
 
 const createError = require('http-errors')
 app
