@@ -21,11 +21,12 @@ serv.listen(app.get('port'),
   () => console.log(`listen http://localhost:${JSON.stringify(serv.address().port)}`)
 );
 
-/*
+require('./ws/ws')(serv, app)
+
 app.get('/', (req, res) => {
   console.error('express connection');
   res.sendFile(require('path').join(__dirname, 'ws.html'));
-});*/
+});
 
 
 const createError = require('http-errors')
