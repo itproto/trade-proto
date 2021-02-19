@@ -13,4 +13,8 @@ https://hpbn.co/websocket/
 
 ## samples
 https://iqoption.com/traderoom
+https://www.tradingview.com/
 https://learning.oreilly.com/library/view/python-for-finance/9781789618518/7438b613-d84d-42a7-87b1-de724c8aebc4.xhtml
+
+## Sources
+https://rapidapi.com/apidojo/api/yahoo-finance1/endpoints
