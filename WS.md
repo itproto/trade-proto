@@ -100,7 +100,9 @@ One-line curl
   http://echo.websocket.org
  ```
 
-
+# Sample app
+https://trading-terminal.tradingview.com/
+ 
  # FINANCE
  https://polygon.io/docs/getting-started
 

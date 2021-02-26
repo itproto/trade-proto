@@ -1,3 +1,22 @@
+## Module Design
+
+- Module is UI and code
+- Module can access application lodash or react
+- Module can get configuration and load itself async or ...
+
+```js
+loadModule($placeholderDom, moduleConfig)
+
+```
+
+
+## READING
+# FinREquireJS 
+
+
+
+
+
 # Dynamic module imports
 https://github.com/mdn/js-examples/tree/master/modules/dynamic-module-imports
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#dynamic_import
