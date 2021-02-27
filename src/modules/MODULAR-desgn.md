@@ -3,10 +3,15 @@
 - Module is UI and code
 - Module can access application lodash or react
 - Module can get configuration and load itself async or ...
+- Module can be deployed to some url as bundle and loaded in runtime
 
 ```js
+// app
 loadModule($placeholderDom, moduleConfig)
 
+
+// module
+init($placeholderDom)
 ```
 
 

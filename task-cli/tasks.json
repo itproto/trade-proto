@@ -1,0 +1,114 @@
+{
+  "data": {
+    "tasks": [
+      {
+        "iid": "0it07bp2s718",
+        "name": "foo",
+        "duration": 30
+      },
+      {
+        "iid": "03phejjh1qeo",
+        "name": "foo",
+        "duration": null
+      },
+      {
+        "iid": "0art8m5hv7j8",
+        "name": "foo",
+        "duration": 30
+      },
+      {
+        "iid": "0934lkf2319o",
+        "name": "foo",
+        "duration": 30
+      },
+      {
+        "iid": "0cnrdebstfk8",
+        "name": "foo",
+        "duration": 30
+      },
+      {
+        "iid": "0jpo15p268b",
+        "name": "foo",
+        "duration": 30
+      },
+      {
+        "iid": "00105detvh8o",
+        "name": "foo",
+        "duration": 30
+      },
+      {
+        "iid": "09v994shd0u8",
+        "name": "foo",
+        "duration": 30
+      },
+      {
+        "iid": "0tfjf6i7842o",
+        "name": "foo",
+        "duration": 30
+      },
+      {
+        "iid": "0iuumj47spfg",
+        "name": "foo",
+        "duration": 30
+      },
+      {
+        "iid": "0p4eh825qsh",
+        "name": "foo",
+        "duration": 30
+      }
+    ],
+    "bars": [
+      {
+        "iid": "03ctt8l0ud9o"
+      },
+      {
+        "iid": "08t0j35sfigg"
+      },
+      {
+        "iid": "0l8fq0c9d8bo",
+        "name": "foo"
+      },
+      {
+        "iid": "03525dt4dkro",
+        "name": "foo",
+        "duration": 23
+      },
+      {
+        "iid": "0kkcj9qk07ho",
+        "name": "foo",
+        "duration": "\"23\""
+      },
+      {
+        "iid": "0u256hkgtlc",
+        "name": "foo",
+        "duration": "\"23\""
+      },
+      {
+        "iid": "0jiaoagfoc4",
+        "name": "foo",
+        "duration": "\"23\""
+      }
+    ],
+    "foos": [
+      {
+        "iid": "01p32rjrt55o"
+      },
+      {
+        "iid": "0mubok5952lo",
+        "name": "bar"
+      },
+      {
+        "iid": "0fpk573rja4g",
+        "name": "bar1"
+      },
+      {
+        "iid": "0351gn8bpdmo",
+        "name": "bar2"
+      },
+      {
+        "iid": "0je1jnuagk2",
+        "name": "bar3"
+      }
+    ]
+  }
+}

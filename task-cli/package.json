@@ -1,0 +1,16 @@
+{
+  "name": "task-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "nodemon index.js -- -x 3 -y 4 -n5 -abc --beep=boop foo bar baz"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "minimist": "^1.2.5",
+    "pluralize": "^8.0.0"
+  }
+}

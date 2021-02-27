@@ -159,5 +159,21 @@
     "presets": [
       "react-app"
     ]
-  }
+  },
+  "description": "https://gist.github.com/lancejpollard/1398757/0491a7a042e1ccb31280699b94c6b191ac591828 https://github.com/flaviocopes/chat-app-react-redux-saga-websockets",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itproto/trade-proto.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itproto/trade-proto/issues"
+  },
+  "homepage": "https://github.com/itproto/trade-proto#readme"
 }

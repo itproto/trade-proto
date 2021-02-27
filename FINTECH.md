@@ -1,1 +1,1 @@
-https://learning.oreilly.com/library/view/fintech-innovation/9781119226987/
+https://github.com/StockSharp/StockSharp
