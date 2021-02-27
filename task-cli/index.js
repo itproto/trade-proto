@@ -4,7 +4,7 @@ const cli = require('readline').createInterface({
     input: process.stdin,
     output: process.stdout,
     historySize: 50,
-    //   terminal: true,
+    terminal: true,
     completer: completer,
     tabSize: 1
 });
@@ -25,16 +25,13 @@ const main = () => {
         const argv = require('minimist')(args);
         const cmd = commands[cmdName];
         if (cmd) {
-            if (typeof cmd === 'function') {
-                cmd(argv)
-            } else {
-                cmd.action(argv)
-            }
+            const runCmd = typeof cmd === 'function' ? cmd : cmd.action;
+            runCmd(argv)
         } else {
             console.warn(`No command found for ${line}`)
         }
         cli.prompt();
-    }).on('close', function () {
+    }).on('close', () => {
         console.log('Bye');
         process.exit(0);
     });

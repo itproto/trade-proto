@@ -10,7 +10,7 @@ const params = {
 }
 
 const add = (args) => {
-    const { name, help, _ } = args;
+    const { help, _ } = args;
     if (!args || _.length < 1) {
         return;
     }
@@ -51,7 +51,7 @@ const add = (args) => {
 };
 
 const ls = (args) => {
-    const { name, help, _, table } = args;
+    const { _, table } = args;
     if (!args || _.length < 1) {
         return;
     }

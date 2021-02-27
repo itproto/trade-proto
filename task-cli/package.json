@@ -12,5 +12,8 @@
   "dependencies": {
     "minimist": "^1.2.5",
     "pluralize": "^8.0.0"
+  },
+  "devDependencies": {
+    "countdown": "^2.6.0"
   }
 }
