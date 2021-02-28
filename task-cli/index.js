@@ -1,20 +1,26 @@
 
 const { commands } = require('./commands');
 const { commands: trackerCommands } = require('./tracker/commands');
+
+class CliContext {
+    completer(line) {
+        const completions = Object.keys(commands)
+        const hits = completions.filter((c) => c.startsWith(line));
+        return [hits.length ? hits : completions, line];
+    }
+}
+
+const cliContext = new CliContext();
+
 const cli = require('readline').createInterface({
     input: process.stdin,
     output: process.stdout,
     historySize: 50,
     terminal: true,
-    completer: completer,
+    completer: cliContext.completer,
     tabSize: 1
 });
 
-function completer(line) {
-    const completions = Object.keys(commands)
-    const hits = completions.filter((c) => c.startsWith(line));
-    return [hits.length ? hits : completions, line];
-}
 
 const main = () => {
     cli.setPrompt('> ');
@@ -28,7 +34,7 @@ const main = () => {
         if (cmd) {
             const runCmd = typeof cmd === 'function' ? cmd : cmd.action;
             cli.prompt();
-            runCmd(argv, cli)
+            runCmd(argv, cli, console)
         } else {
             console.warn(`No command found for ${line}`)
         }

@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "ascii-numbers": "^1.0.4",
+    "chalk": "^4.1.0",
     "minimist": "^1.2.5",
     "pluralize": "^8.0.0"
   },

@@ -7,25 +7,45 @@ const config = {
     space: ''
 };
 
+const chalk = require('chalk');
 
 const asciiNumbersWithFont = new AsciiNumbers(defaultFont, config);
+function clear() {
+    // 1. Print empty lines until the screen is blank.
+    process.stdout.write('\\033[2J');
 
-let iid;
-const start = (_, cli) => {
-    let counter = 20;
-    iid = setInterval(() => {
-        console.log('\n', asciiNumbersWithFont.getNumber(counter));
-        counter--;
-        cli.prompt();
-    }, 3000);
+    // 2. Clear the scrollback.
+    process.stdout.write('\u001b[H\u001b[2J\u001b[3J');
 }
 
-const stop = () => {
+
+let iid;
+const start = (argv, cli, { log }) => {
+    let { c: counter = 25, i: interval = 25 } = argv;
+
+    const tick = () => {
+        clear();
+        log('\n', chalk.blue(asciiNumbersWithFont.getNumber(counter)));
+        counter--;
+        if (counter === 0) {
+            stop(undefined, cli, { log });
+        }
+        cli.prompt();
+    }
+
+    tick();
+    iid = setInterval(tick, interval * 1000);
+}
+
+const stop = (_, cli, { log }) => {
     clearInterval(iid);
+    clear();
+    log('Stopped')
+    cli.prompt();
 }
 
 const commands = {
-    start,
+    countdown: start,
     stop
 };
 
