@@ -1,5 +1,6 @@
 
 const { commands } = require('./commands');
+const { commands: trackerCommands } = require('./tracker/commands');
 const cli = require('readline').createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -23,10 +24,11 @@ const main = () => {
         const line = src.trim();
         const [cmdName, ...args] = line.split(/\s+/);
         const argv = require('minimist')(args);
-        const cmd = commands[cmdName];
+        const cmd = commands[cmdName] || trackerCommands[cmdName];
         if (cmd) {
             const runCmd = typeof cmd === 'function' ? cmd : cmd.action;
-            runCmd(argv)
+            cli.prompt();
+            runCmd(argv, cli)
         } else {
             console.warn(`No command found for ${line}`)
         }
