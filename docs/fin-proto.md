@@ -1,4 +1,7 @@
 > https://en.wikipedia.org/wiki/List_of_electronic_trading_protocols
+- https://wamp-proto.org/comparison.html
+
+
 ## QuicFix
 > opensource http://www.quickfixengine.org/quickfix/doc/html/
 - textbased, quite complex

@@ -1,4 +1,10 @@
 ## samples
+https://github.com/orgs/finos/people
+https://www.finextra.com/
+https://landscape.finos.org/
+https://github.com/goldmansachs
+https://github.com/morganstanley
+https://github.com/jpmorganchase
 https://www.reactivetrader.com/
 https://iqoption.com/traderoom
 https://www.tradingview.com/
@@ -6,6 +12,9 @@ https://learning.oreilly.com/library/view/python-for-finance/9781789618518/7438b
 https://github.com/StockSharp/StockSharp
 
 ## Codebase
+
+# Finos
+https://www.finos.org/get-involved
 
 ## Quant
 - https://github.com/wilsonfreitas/awesome-quant
