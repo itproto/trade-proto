@@ -1,0 +1,15 @@
+{
+  "name": "low-lewel-ws-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "websocket-example.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "repl": "^0.1.3"
+  }
+}

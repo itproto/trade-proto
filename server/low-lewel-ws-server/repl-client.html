@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<title>WebSocket REPL Client</title>
+<meta charset="utf-8">
+<style>
+    .repl-client { background: orange; }
+</style>
+</head>
+
+<script>
+    // URL = PROTOCOL://HOST:PORT/URI
+    var url = "ws://localhost:9999/repl";
+    var ws = new WebSocket(url);
+
+    ws.onmessage = function(e) {
+        console.log("command: ", event.data);
+        try {
+            var result = eval(event.data);
+            ws.send(result.toString());
+        } catch (error) {
+            ws.send(error.toString());
+        }
+    };
+</script>
+<body>
+    <div class='repl-client'>Remote Control</div>
+</body>
+</html>

@@ -1,0 +1,2 @@
+- move-out from pub repo to aws
+- 

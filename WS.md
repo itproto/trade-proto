@@ -4,6 +4,14 @@ https://github.com/websockets/ws#usage-examples
 [] https://hpbn.co/websocket/
 [] https://learning.oreilly.com/playlists/e9736caa-e54d-43e4-86a9-65a3eb93b93b/
 
+## Params
+- by URL
+- Full dup
+- Tex/bin
+- message boundaries
+
+> with WS multi-byte message arrives in-whole and in-order
+
 ## What it adds
 - binary/text
 - same-origin enforce
@@ -57,3 +65,48 @@ ws.onopen = function () {
       ws.send(evt.data); 
   });
 ```
+
+## MessageTypes:
+- 0 Text
+- 2 Binary
+- 8 Close
+- 9/10 ping/pong
+
+## Low level session
+```
+GET /echo HTTP/1.1
+Host: echo.websocket.org
+Origin:http://www.websocket.org
+Sec-WebSocket-Key: 7+C600xYybOv2zmJ69RQsw==
+Sec-WebSocket-Version: 13
+Upgrade: websocket
+<==========
+101 Switching Protocols
+Connection: Upgrade
+Date: Wed, 20 Jun 2012 03:39:49 GMT
+Sec-WebSocket-Accept: fYoqiH14DgI+5ylEMwM2sOLzOi0=
+Server: Kaazing Gateway
+Upgrade: WebSocket
+```
+
+
+One-line curl
+```sh
+ curl -i -N \
+  -H "Connection: Upgrade" \
+  -H "Upgrade: websocket" \
+  -H "Host: echo.websocket.org" \
+  -H "Origin: http://www.websocket.org" \
+  http://echo.websocket.org
+ ```
+
+# Sample app
+https://trading-terminal.tradingview.com/
+ 
+ # FINANCE
+ https://polygon.io/docs/getting-started
+
+ - https://dev.to/midassss/real-time-financial-data-streaming-using-websockets-4phb
+
+ # Tools
+ https://www.npmjs.com/package/wscat
