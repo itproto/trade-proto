@@ -80,7 +80,8 @@ https://single-spa.js.org/
 
 
 # MicroFrontTeam
-- With the micro frontends approach, teams are in full control of their technology stack (micro architecture). 
+- with the micro frontends approach
+- teams are in full control of their technology stack (micro architecture)
 - A fragment is a mini-application that is self-contained, which means it brings everything it needs with it.
 - the application gets divided into multiple vertical slices that span from database to user interface.
 - Being able to choose the technology that’s best for the job
